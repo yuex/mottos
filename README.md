@@ -1,6 +1,6 @@
 # Introduction
 
-A small bash script uses `fortune` to random select a motto from mottos your collected. It's very easy to integrate this script into your shell prompt or tmux or vim status bar. It makes the prompt more pretty. See [Screenshot][] below.
+A small bash script uses `fortune` to random select a motto from mottos your collected. It's very easy to integrate this script into your shell prompt or tmux or vim status bar. It makes the prompt more pretty. See [Screenshot](#screenshot) below.
 
 # Config Your Mottos
 
