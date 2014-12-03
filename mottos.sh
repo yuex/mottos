@@ -12,7 +12,7 @@ MOTTOS_SOURCE=${MOTTOS_DIR}/mottos
 MOTTOS_OUTPUT=${MOTTOS_DIR}/mottos.dat
 
 if [ ! -r ${MOTTOS_SOURCE} ]; then
-    ${ECHO} "mottos source ${MOTTOS_SOURCE} not found"
+    ${ECHO} "mottos source ( ${MOTTOS_SOURCE} ) not found"
     exit
 fi
 
