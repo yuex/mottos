@@ -1,10 +1,12 @@
 #!/usr/bin/env sh
 
-ECHO="echo -n"
+function error {
+    echo -n "$*" &>/dev/stderr
+    exit 1
+}
 
 if ! which fortune &>/dev/null; then
-    ${ECHO} "fortune not found"
-    exit
+    error "fortune not found"
 fi
 
 MOTTOS_DIR=~/.mottos
@@ -12,8 +14,7 @@ MOTTOS_SOURCE=${MOTTOS_DIR}/mottos
 MOTTOS_OUTPUT=${MOTTOS_DIR}/mottos.dat
 
 if [ ! -r ${MOTTOS_SOURCE} ]; then
-    ${ECHO} "mottos source ( ${MOTTOS_SOURCE} ) not found"
-    exit
+    error "mottos source ( ${MOTTOS_SOURCE} ) not found"
 fi
 
 if [ ! -r ${MOTTOS_OUTPUT} \
@@ -28,4 +29,8 @@ fi
 
 MOTTOS_STRING=`fortune ${OPT} ${MOTTOS_SOURCE}`
 
-${ECHO} ${MOTTOS_STRING:="fortune meets error"}
+if [ -z ${MOTTOS_STRING} ]; then
+    error "fortune meets error"
+else
+    echo -n ${MOTTOS_STRING}
+fi
