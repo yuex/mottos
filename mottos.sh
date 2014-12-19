@@ -29,7 +29,7 @@ fi
 
 MOTTOS_STRING=`fortune ${OPT} ${MOTTOS_SOURCE}`
 
-if [ -z ${MOTTOS_STRING} ]; then
+if [ -z "${MOTTOS_STRING}" ]; then
     error "fortune meets error"
 else
     echo -n ${MOTTOS_STRING}
